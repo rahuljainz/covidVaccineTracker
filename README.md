@@ -12,10 +12,14 @@ Easily usable python script to track covid vaccine and get notification on your 
     1. Click on "Create" button on top-right corner of https://ifttt.com/home
     2. Click on "Add" in front of "If this".
    3. Search for "Webhooks". Select "Receive a web request". Enter event name, say "vacineTracker" and note that event name.
+      ![Screenshot](img/IFTTT%20trigger.jpg)
     4. Click on "Add" in front of "Then That".
     5. Search for "Notifications" and then select "Send a notification from the IFTTT app".
     6. In the message section, write this `The {{MakerWebhooks.event.Value1}} vaccine is available in  {{MakerWebhooks.event.Value2}} on {{MakerWebhooks.event.Value3}}`
-    7. Submit and save the applet
+      ![Screenshot](img/IFTTT%20action.jpg)    
+   7. Submit and save the applet
+      ![Screenshot](img/IFTTT%20applet.jpg)
+   
 4. Download the IFTTT app on your mobile device and login with same account.
 
 ## How to run the script
