@@ -1,6 +1,6 @@
 import time
 
-from handler import lambda_handler
+from lambda_handler import lambda_handler
 
 if __name__ == '__main__':
     event = {
@@ -13,10 +13,10 @@ if __name__ == '__main__':
                 "district": "gurgaon"
             }
         ],
-        "days": 2,
         "vaccine": "COVISHIELD",
         "age": 50,
-        "IFTTT_WEBHOOK_EVENT_NAME": "*****",
+        "days": 2,
+        "IFTTT_WEBHOOK_EVENT_NAME": "vacineTracker",
         "IFTTT_WEBHOOK_KEY": "*******"
     }
     while True:

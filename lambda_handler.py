@@ -1,7 +1,5 @@
 import json
-import subprocess
 from datetime import datetime, timedelta
-
 import requests
 
 from constants import STATES_MAP
@@ -10,9 +8,8 @@ from constants import STATES_MAP
 def fetch_vaccine_slot(district_id, date):
     url = "https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/calendarByDistrict?district_id={}&date={}".format(
         district_id, date)
-    command = ["curl", "-A", "\"Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101 Firefox/81.0\"", "-s", url]
-    response = subprocess.check_output(command)
-    response = json.loads(response.decode("utf-8"))
+    response = requests.get(url, headers={'User-Agent': "Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101 Firefox/81.0"})
+    response = json.loads(response.text)
     open_slots = []
     for center in response["centers"]:
         for session in center["sessions"]:
